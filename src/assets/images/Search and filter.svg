@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+    <defs>
+        <style>
+            .cls-2,.cls-3{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.25px}.cls-2{stroke:#c38bfd}.cls-3{stroke:#fff}
+        </style>
+    </defs>
+    <g id="Search_and_filter" transform="translate(-414 -2323)">
+        <circle id="Ellipse_9" cx="40" cy="40" r="40" fill="#701fc0" transform="translate(414 2323)"/>
+        <g id="streamline-icon-human-resources-search-employees_140x140" transform="translate(438 2347)">
+            <path id="Path_325" d="M4.369 70.205a11.578 11.578 0 0 1 .954-4.565c.689-1.347 3.563-2.282 7.171-3.591.976-.353.816-2.848.384-3.314A6.966 6.966 0 0 1 11 53.269a4.69 4.69 0 0 1 4.02-5.015" class="cls-2" transform="translate(-4.369 -37.249)"/>
+            <path id="Path_326" d="M60.381 76.417a6.137 6.137 0 0 1-1.713 3.4c-.432.466-.594 2.961.384 3.314 3.608 1.309 6.482 2.244 7.171 3.591a11.773 11.773 0 0 1 .976 4.565" class="cls-2" transform="translate(-44.77 -58.337)"/>
+            <path id="Path_327" d="M103.662 92.926h3.471v-1.2c0-4.241-2.931-4.926-5.873-6.009-.975-.362-.815-2.908-.384-3.383a6.374 6.374 0 0 0 1.759-3.739" class="cls-2" transform="translate(-76.376 -59.97)"/>
+            <path id="Path_328" d="M61.244 12.151a7.694 7.694 0 1 0 7.694-7.694 7.694 7.694 0 0 0-7.694 7.694z" class="cls-3" transform="translate(-46.954 -4.457)"/>
+            <path id="Path_329" d="M119.074 62.287l-5.552-5.552" class="cls-3" transform="translate(-86.098 -43.6)"/>
+        </g>
+    </g>
+</svg>

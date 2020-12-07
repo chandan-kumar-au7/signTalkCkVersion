@@ -1,0 +1,15 @@
+.nav-item > .active {
+    border-bottom: 1px solid rgb(255, 255, 255) !important;
+}
+a{
+    cursor: pointer!important;
+    text-decoration: none!important;
+}
+a:hover{
+    cursor: pointer!important;
+    text-decoration: none!important;
+}
+.rounded-circle:hover {
+    color: white;
+    cursor: pointer;
+  }

@@ -1,0 +1,63 @@
+.customOverlay {
+    background: rgba(0,0,0, 0.7);
+  }
+.customModal {
+    background: #171717;
+    max-width: 500px;
+    width: 40%;
+    margin-top: 10%;
+    text-align: center;
+    border-radius: 7px;
+    padding:0px;
+    padding-bottom: 40px;
+}
+
+.customModal2 {
+    background: #171717;
+    max-width: 500px;
+    width: 35%;
+    margin-top: 5%;
+    text-align: center;
+    border-radius: 7px;
+    padding:0px;
+    padding-bottom: 40px;
+}
+.closeIcon{
+    color:white;
+    background-color: white;
+}
+.closeBtn{
+    color:white;
+    background-color: white;
+    display: none;
+}
+
+.clickbtn:hover{
+    background-color: transparent;
+}
+.sendtbn{
+    background-color: #54ACF0;
+    color:white
+}
+.smallFont{
+    font-size:14px;color:#7C7C7C
+}
+
+@media screen and (max-width:992px){
+    .customModal{
+        width: 50%;
+    }
+
+    .customModal2{
+        width:50%
+    }
+}
+@media screen and (max-width:768px){
+    .customModal{
+        width:80%
+    }
+    .customModal2{
+        width:80%
+    }
+}
+

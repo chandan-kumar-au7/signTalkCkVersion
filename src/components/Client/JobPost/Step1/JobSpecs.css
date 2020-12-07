@@ -1,0 +1,87 @@
+.job-sepcs-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 85%;
+    width: 80%;
+    margin: 1.3em auto;
+}
+
+.selections{
+    display: flex;
+    flex-direction: column;
+}
+
+.JB, .lang, .region, .type{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.job-sepcs-container select{
+    height: 1.5em;
+    border-radius: 5px;
+    padding-left: .7em;
+    outline: none;
+    font-size: 1em;
+    color: rgb(175, 166, 166);
+}
+
+
+.labels{
+    font-size: .9em;
+}
+
+.types-item{
+    display: flex;
+    justify-content: space-evenly;
+    /* border: 1px solid red; */
+    height: 1.5em;
+}
+
+.short, .contract{
+    display: flex;
+    align-self: center;
+    width: 50%;
+}
+
+input[type='checkbox']{
+    align-self: center;
+    margin-right: .5em;
+    /* styles */
+    appearance: none;
+    border: 3px solid #ab57ff; 
+    outline: none;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+}
+
+input[type='checkbox']:after, input[type='checkbox']:checked:active{
+    border: 7px solid #ab57ff; 
+}
+
+input[type='checkbox']:checked{
+    border: 7px solid #ab57ff; 
+}
+
+.btns{
+    justify-content: space-between;
+    width: 50%;
+    align-self: center;
+}
+
+.btns button {
+    padding: 10px 35px;
+    font-size: .8em;
+    border-radius: 10px;
+    color:  white;
+    outline: none;
+}
+
+.btns button:nth-child(1){
+    border: 3px solid #ab57ff;
+    background: none;
+}
+.btns button:nth-child(2){
+    background: #ab57ff;
+}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+    <defs>
+        <style>
+            .cls-2,.cls-3{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.25px}.cls-2{stroke:#fff}.cls-3{stroke:#c38bfd}
+        </style>
+    </defs>
+    <g id="Negotiate" transform="translate(-1426 -2323)">
+        <circle id="Ellipse_11" cx="40" cy="40" r="40" fill="#701fc0" transform="translate(1426 2323)"/>
+        <g id="streamline-icon-cash-payment-bills_140x140" transform="translate(1453 2347)">
+            <path id="Path_345" d="M54.3 18.958l-1.789-13.67a.8.8 0 0 1 .791-.913h11.072" class="cls-2" transform="translate(-43.959 -4.375)"/>
+            <path id="Path_346" d="M76.714 36.331l-1.342-13.424a.733.733 0 0 1 .733-.81h10.112a.733.733 0 0 1 .733.846l-2.022 13.483" class="cls-2" transform="translate(-61.079 -17.644)"/>
+            <path id="Path_347" d="M95.761 50.289a.55.55 0 1 1-.555.555.55.55 0 0 1 .55-.55" class="cls-2" transform="translate(-75.933 -38.753)"/>
+            <path id="Path_342" d="M18.5 74.665h3.664a.708.708 0 0 1 .733.767v13.79a.708.708 0 0 1-.733.767H18.5" class="cls-3" transform="translate(-18.497 -57.004)"/>
+            <path id="Path_343" d="M42.081 61.74l-2.817 3.507a2.052 2.052 0 0 1-1.532.767H36" class="cls-3" transform="translate(-31.601 -47.327)"/>
+            <path id="Path_344" d="M36 89.059c3.142 2.382 6.009 3.981 7.86 3.981h9.194c1.114 0 1.814-.079 2.3-1.532a93.092 93.092 0 0 0 1.533-11.227c0-.765-.767-1.532-2.3-1.532H45.89" class="cls-3" transform="translate(-31.601 -60.063)"/>
+        </g>
+    </g>
+</svg>

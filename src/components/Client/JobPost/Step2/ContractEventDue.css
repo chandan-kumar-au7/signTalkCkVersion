@@ -1,0 +1,13 @@
+.event-due-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 70%;
+    width: 70%;
+    margin: 1.3em auto;
+}
+
+.duration, .start-date, .end-date{
+    display: flex;
+    justify-content: space-evenly;
+}

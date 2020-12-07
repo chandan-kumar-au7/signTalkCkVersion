@@ -1,0 +1,40 @@
+.AsideLogoParent {
+  position: relative;
+  top: -3em;
+}
+.AsideLogoParenttwo {
+  width: 170px;
+  position: absolute;
+  background: red;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.AsideLogo {
+  position: absolute;
+  width: 44px;
+  top: -10px;
+}
+.AsideLogoName {
+  position: absolute;
+  right: 10px;
+  font-size: 26px;
+}
+
+.tasks {
+  margin: 10px 0px 10px 10px;
+  font-size: 16px;
+}
+
+.bottom_divs {
+  margin-top: 130px;
+}
+
+.float-left {
+  min-width: 180px;
+  height: 100vh;
+  box-shadow: 1px 0px 15px black;
+  z-index: 100;
+  position: fixed;
+  top: 0px;
+}

@@ -1,0 +1,13 @@
+.contract-confirmtion-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 70%;
+    width: 80%;
+    margin: 1.3em auto;
+}
+
+.interpreters, .amount, .description {
+    display: flex;
+    justify-content: space-evenly;
+}

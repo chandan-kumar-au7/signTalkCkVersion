@@ -1,0 +1,77 @@
+.mainParent {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+}
+
+.BlueColorDiv {
+  color: rgb(84, 172, 240);
+}
+
+.accept-btn {
+  background: rgb(84, 172, 240);
+}
+
+.negotiate-btn {
+  border: rgb(84, 172, 240) 2px solid;
+  color: white;
+  padding: 5px;
+}
+.negotiate-btn:hover {
+  color: rgb(84, 172, 240);
+}
+
+.cost {
+  font-size: 2.2em;
+  font-weight: 600;
+  margin-right: 0.6em;
+  text-align: end;
+  color: white;
+}
+
+.rateperhour {
+  font-size: 16px;
+}
+
+.rightsidedivforprice {
+  position: absolute;
+  right: 0%;
+  bottom: 24%;
+}
+
+.appreq {
+  margin-right: 25px;
+  font-size: 18px;
+}
+.divforappreq {
+  margin-top: 12px;
+  font-size: 18px;
+}
+.Paragraph_lorem {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.InterpreterRequired {
+  position: absolute;
+  display: inline-block;
+  right: 3%;
+  top: 14%;
+}
+
+.Policecap {
+  position: absolute;
+  right: 3%;
+  top: 0%;
+}
+
+.Requirement {
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+.textBold {
+  font: normal normal bold 20px/25px Poppins;
+  opacity: 1;
+  color: white;
+}

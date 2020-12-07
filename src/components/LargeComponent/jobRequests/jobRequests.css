@@ -1,0 +1,97 @@
+.fo1 {
+  color: rgba(172, 169, 169, 0.801);
+}
+
+/* .filter-section-btns{
+    border: 1px solid red;
+    display: inline;
+} */
+
+.filter-section-btns button {
+  border-radius: 20px;
+  padding: 3px 20px;
+  font-size: large;
+  background: rgba(107, 104, 104, 0.534);
+  color: rgb(175, 172, 172);
+}
+
+.card {
+  background-color: rgba(87, 82, 82, 0.226);
+  border-radius: 15px;
+}
+
+.card-title p {
+  color: White;
+  font-size: 1.2em;
+}
+
+.card-footer-wrapper {
+  justify-content: space-between;
+}
+
+.card-footer-wrapper .left-side {
+  width: 50%;
+}
+
+.card-body p {
+  font-size: 0.8em;
+}
+
+.card-img img {
+  width: 10%;
+}
+
+.card-footer {
+  background: none;
+  border: none;
+}
+
+.card-footer p {
+  font-size: 1.1em;
+}
+
+.right-side {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 45%;
+  text-align: center;
+}
+
+.right-side p {
+  font-size: 2.5em;
+  font-weight: 600;
+  margin-right: 1.3em;
+  text-align: end;
+  color: white;
+}
+
+.right-side-btns button {
+  width: 35%;
+}
+
+.right-side-btns .accept-btn {
+  background: rgb(84, 172, 240);
+}
+
+.right-side-btns .negotiate-btn {
+  border: rgb(84, 172, 240) 2px solid;
+  color: white;
+  padding: 5px;
+}
+
+.close-btn {
+  position: absolute;
+  right: 1%;
+  top: 5%;
+}
+
+.close-btn button {
+  background: none;
+  border: none;
+}
+
+.close-btn img {
+  width: 0.9em;
+}

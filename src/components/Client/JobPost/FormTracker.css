@@ -1,0 +1,45 @@
+.form-tracker{
+    display: flex;
+    justify-content: space-evenly;
+    width: 20%;
+    height: 6%;
+    margin: 1em auto;
+    padding: 0%;
+}
+
+.step-name{
+    font-weight: 700;
+}
+
+.form-tracker .divider{
+    width: 60%;
+    background: rgb(68, 66, 66);
+    height: 1px;
+    align-self: center;
+    padding: 0%;
+}
+
+.form-tracker  .sections{
+    font-size: .61em;
+    margin: 0%;
+    padding: 0%;
+    text-align: center;
+}
+
+.sections .circle{
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    padding: 4px;
+    background: #4F4F4F;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    font-weight: 800;
+}
+
+.sections p{
+    margin-top: 5px;
+    font-size: 12px;
+    color: #4F4F4F
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+    <defs>
+        <style>
+            .cls-2,.cls-3{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.25px}.cls-2{stroke:#c38bfd}.cls-3{stroke:#fff}
+        </style>
+    </defs>
+    <g id="Schedule_and_track" transform="translate(-920 -2323)">
+        <circle id="Ellipse_10" cx="40" cy="40" r="40" fill="#701fc0" transform="translate(920 2323)"/>
+        <g id="streamline-icon-task-list-check-1_140x140" transform="translate(947 2347)">
+            <path id="Path_335" d="M30.625 61.314h7.694" class="cls-2" transform="translate(-24.03 -47.024)"/>
+            <path id="Path_336" d="M30.625 83.189h4.4" class="cls-2" transform="translate(-24.03 -63.403)"/>
+            <path id="Path_337" d="M30.625 105.064h4.4" class="cls-2" transform="translate(-24.03 -79.782)"/>
+            <path id="Path_338" d="M17.566 37.416H6.573a2.2 2.2 0 0 1-2.2-2.2V12.134a2.2 2.2 0 0 1 2.2-2.2h5.5a5.5 5.5 0 1 1 10.992 0h5.5a2.2 2.2 0 0 1 2.2 2.2v3.3" class="cls-2" transform="translate(-4.375 -4.439)"/>
+            <path id="Path_339" d="M55.237 21.939a.55.55 0 1 1-.55.55.55.55 0 0 1 .55-.55" class="cls-2" transform="translate(-42.047 -17.542)"/>
+            <path id="Path_340" d="M65.625 74.483a8.794 8.794 0 1 0 8.794-8.794 8.794 8.794 0 0 0-8.794 8.794z" class="cls-3" transform="translate(-50.236 -50.3)"/>
+            <path id="Path_341" d="M92.044 90.51l-4.258 5.678a1.1 1.1 0 0 1-1.658.117l-2.2-2.2" class="cls-3" transform="translate(-63.942 -68.885)"/>
+        </g>
+    </g>
+</svg>

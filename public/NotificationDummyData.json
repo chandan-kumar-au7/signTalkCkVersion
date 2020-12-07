@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Avinash Has accepted the offer",
+    "image": "A",
+    "timestamp": "Just Now",
+    "message": "Click to open chat"
+  },
+  {
+    "id": 2,
+    "title": "Kavita Has accepted negotiated price",
+    "image": "G",
+    "timestamp": "10 Min Ago",
+    "message": "Click to view Price"
+  },
+  {
+    "id": 3,
+    "title": "Ravina Has accepted the offer",
+    "image": "A",
+    "timestamp": "2 Days Ago",
+    "message": "Click to open chat"
+  },
+  {
+    "id": 4,
+    "title": "Prabhu Has accepted negotiated price",
+    "image": "A",
+    "timestamp": "Just Now",
+    "message": "Click to view Price "
+  },
+  {
+    "id": 5,
+    "title": "Prabhu Has accepted negotiated price",
+    "image": "A",
+    "timestamp": "Just Now",
+    "message": "Click to view Price "
+  },
+  {
+    "id": 6,
+    "title": "Prabhu Has accepted negotiated price",
+    "image": "A",
+    "timestamp": "20 Min Ago",
+    "message": "Click to view Price "
+  }
+]

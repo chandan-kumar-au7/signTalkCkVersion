@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+    <defs>
+        <style>
+            .cls-2,.cls-3{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.25px}.cls-2{stroke:#fff}.cls-3{stroke:#c38bfd}
+        </style>
+    </defs>
+    <g id="Quality_and_verified" transform="translate(-414 -2656)">
+        <circle id="Ellipse_13" cx="40" cy="40" r="40" fill="#701fc0" transform="translate(414 2656)"/>
+        <g id="streamline-icon-single-man-actions-check-1_140x140" transform="translate(442 2680)">
+            <path id="Path_330" d="M65.625 74.419a8.794 8.794 0 1 0 8.794-8.794 8.794 8.794 0 0 0-8.794 8.794z" class="cls-2" transform="translate(-50.236 -50.236)"/>
+            <path id="Path_331" d="M92.044 90.446l-4.258 5.678a1.1 1.1 0 0 1-1.658.117l-2.2-2.2" class="cls-2" transform="translate(-63.942 -68.821)"/>
+            <path id="Path_332" d="M4.375 71.15a9.9 9.9 0 0 1 13.777-9.1" class="cls-3" transform="translate(-4.375 -46.967)"/>
+            <path id="Path_333" d="M23.012 16.222a10.049 10.049 0 0 0 11.2 2.251" class="cls-3" transform="translate(-18.33 -13.246)"/>
+            <path id="Path_334" d="M19.687 10.421a6.046 6.046 0 1 0 6.046-6.046 6.046 6.046 0 0 0-6.046 6.046z" class="cls-3" transform="translate(-15.84 -4.375)"/>
+        </g>
+    </g>
+</svg>

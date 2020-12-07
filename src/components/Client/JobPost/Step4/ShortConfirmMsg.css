@@ -1,0 +1,23 @@
+.short-confirm-msg{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 80%;
+    margin: auto;
+    /* border: 1px solid red; */
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+}
+
+.background, .language, .region, .start-date, .booking-time, .interpreters, .amount, .description{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.w-40{
+    width: 40%;
+}
