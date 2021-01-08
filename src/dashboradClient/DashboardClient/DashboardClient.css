@@ -1,0 +1,46 @@
+.bellinpurple {
+  background-color: #7e21db;
+}
+
+.parOfSeeAll {
+  width: 100%;
+  display: inline-flex;
+  /* background: red; */
+  padding: 20px 0px;
+}
+
+.seeAllClient {
+  width: 50%;
+  /* background: purple; */
+  text-align: right;
+  margin-right: 15px;
+}
+
+.ScheduledMeetingsParent {
+  width: 50%;
+  /* background: yellow; */
+}
+
+.seeAllH5 {
+  color: #7e21db;
+  cursor: pointer;
+}
+
+.calenderForClient {
+  background: #272727;
+}
+
+.calenderForClient :enabled:hover,
+.calenderForClient :enabled:focus {
+  background: #7e21db;
+}
+
+.react-calendar--selectRange .calenderForClient {
+  background-color: #7e21db;
+}
+
+.FavIntdatagrandparent {
+  /* background: red; */
+  height: 400px;
+  border-radius: 10px;
+}

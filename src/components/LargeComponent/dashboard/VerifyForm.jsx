@@ -7,11 +7,16 @@ import Step3 from './smallComponent/Step3'
 
 import "react-responsive-modal/styles.css";
 
-function VerifyForm({getData,closeModal,sendOtp,state,setState}) {
+function VerifyForm({getData,closeModal,sendOtp,state,setState, phoneModal, setPhoneModal}) {
     return (
         <Modal
-            open={state.o}
-            onClose={() => setState({...state,o:state.o})}
+            open={
+                phoneModal
+            }
+            onClose={() => {
+                setState({...state,o:state.o}) 
+                setPhoneModal(false)
+            }}
             classNames={{
             overlay: 'customOverlay',
             modal: state.formState===0?'customModal':'customModal2',

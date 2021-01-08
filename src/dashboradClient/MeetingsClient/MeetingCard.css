@@ -1,0 +1,60 @@
+.MeetingCard {
+  background: #272727;
+  height: 140px;
+  padding: 20px;
+  margin-right: 2vw;
+  border-radius: 10px;
+}
+
+.cofMeetingcard {
+  display: flex;
+}
+
+.McardFirstChild1 {
+  /* background: red; */
+  height: 100px;
+  flex: 2;
+}
+.McardFirstChild2 {
+  /* background: blue; */
+  height: 100px;
+  flex: 1;
+  text-align: right;
+}
+
+.totalapplicants {
+  font-size: 24px;
+}
+
+.textcolorWhite {
+  color: white;
+}
+
+.viewapplicantsbtn {
+  margin-top: 34px;
+  background-color: #7e21db;
+  color: white;
+  border-radius: 5px;
+  padding: 6px 10px;
+  border: none;
+}
+
+.amountSection {
+  display: flex;
+}
+
+.infoicon {
+  margin-left: 20px;
+}
+
+@media only screen and (max-width: 992px) {
+  .MeetingCard {
+    height: 30vh;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .MeetingCard {
+    height: 35vh;
+  }
+}

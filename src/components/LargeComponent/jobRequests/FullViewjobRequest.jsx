@@ -1,136 +1,46 @@
-import React, { useState, useEffect } from "react";
-import { useHistory, Link } from "react-router-dom";
-import { Bell } from "react-feather";
+import React, { useState } from "react";
 import Avatar from "react-avatar";
-import DetailsRoundedIcon from "@material-ui/icons/DetailsRounded";
 import Policecap from "../../../assets/images/streamline-icon-police-hat-1@140x140 (1).png";
 
 import "./FullViewjobRequest.css";
 
-export default function Profile() {
-  const history = useHistory();
-  let [name, setName] = useState("");
-  let [jobstatus, setjobstatus] = useState("OnSite");
-  let [image, setimage] = useState("");
-  let [title, settitle] = useState("Marthahalli Police Station");
-  let [date, setdate] = useState("16th Oct at 03:30PM");
-  let [timeperiod, settimeperiod] = useState("3 Hour");
-  let [requirement, setrequirement] = useState("Hindi Interpreter");
-  let [irequired, setirequired] = useState("4 (3 Left)");
-
-  let [address, setaddress] = useState(
-    "#769,Gyr Chambers, Kalkondahali, Sarjapur Road,"
-  );
-  let [addressCityState, setaddressCityState] = useState(
-    "Bengaluru, Karnataka,"
-  );
-  let [Application, setApplication] = useState(12);
-  let [Requirement, setRequirement] = useState(4);
-  let [Selected, setSelected] = useState(1);
-  let [RemainingVacancies, setRemainingVacancies] = useState(3);
-  let [price, setprice] = useState(500);
-  let [rateperhour, setrateperhour] = useState(800);
-
-  let [
-    paragraph,
-    setparagraph,
-  ] = useState(`Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ab voluptas odio, nulla, reiciendis perferendis ratione modi fugiat qui cum ea hic accusamus in suscipit ipsam iste voluptatibus quos quaerat.
-`);
-
-  const [DisplayDropdown, setDisplayDropdown] = useState(false);
-  const HandleDisplyDropdown = () => {
-    if (DisplayDropdown) {
-      setDisplayDropdown(false);
-    } else {
-      setDisplayDropdown(true);
-    }
-  };
-
-  useEffect(() => {
-    window.onclick = function (event) {
-      if (!event.target.matches(".NavDropDown")) {
-        setDisplayDropdown(false);
-      }
-    };
-  });
-
+export default function Profile({
+  jobstatus,
+  image,
+  title,
+  date,
+  timeperiod,
+  requirement,
+  irequired,
+  address,
+  addressCityState,
+  Application,
+  Requirement,
+  Selected,
+  RemainingVacancies,
+  rateperhour,
+  paragraph,
+}) {
   return (
     <>
       <div
-        className="col-10 ml-auto c0 p-0"
         style={{
-          minWidth: "850px",
-          position: "relative",
+          borderRadius: "50%",
+          width: "8rem",
+          marginTop: "5%",
+          marginLeft: "2rem",
         }}
       >
-        <div
-          className="col-12 pl-3 pt-3 p-0 pb-5"
-          style={{
-            height: "80px",
-            position: "sticky",
-            top: 0,
-            boxShadow: "0px 5px 15px black",
-          }}
-        >
-          <h3 className="d-inline fo1 font-weight-light">Job Requests</h3>
-
-          <div className="mr-3 rounded-circle p-2 c4 float-right text-light">
-            <Bell />
-          </div>
-
-          <div className="NavDropDown c4 mr-3" onClick={HandleDisplyDropdown}>
-            <div className="NavDropDownchild ">
-              <span
-                style={{
-                  position: "absolute",
-                  top: "50%",
-                  fontSize: "16px",
-                  transform: "translate(25px, -50%)",
-                }}
-              >
-                Neo Ho..
-              </span>
-              <div className="NavDropDownchild2 ">
-                <DetailsRoundedIcon className="DetailsRoundedIcon" />
-              </div>
-            </div>
-          </div>
-
-          {DisplayDropdown && (
-            <ul className="dropdownMenu">
-              <li className="dropdownMenuli">Open Profile</li>
-              <li className="dropdownMenuli">Account Setting</li>
-              <li className="dropdownMenuli">Privacy Policy</li>
-              <li
-                className="dropdownMenuli"
-                onClick={() => {
-                  localStorage.removeItem("token");
-                  history.push("/interpretly");
-                }}
-              >
-                Log Out
-              </li>
-            </ul>
-          )}
-        </div>
-        <div
-          style={{
-            borderRadius: "50%",
-            width: "8rem",
-            marginTop: "5%",
-            marginLeft: "2rem",
-          }}
-        >
-          <Avatar
-            name={name}
-            size="150"
-            textSizeRatio={1.75}
-            round={true}
-            src={image}
-          />
-        </div>
+        <Avatar
+          name={title}
+          size="150"
+          textSizeRatio={1.75}
+          round={true}
+          src={image}
+        />
       </div>
-      <div className="mainParent">
+
+      <div className="mainParent ">
         <div className="child1">
           <div className="marthalli">
             <div>
@@ -195,7 +105,7 @@ export default function Profile() {
               Now
             </p>
           </div>
-          <div className="rightsidedivforprice cost">
+          <div className="rightsidedivforprice cost2">
             <p>&#8377; 500</p>
             <p className="rateperhour">
               Rate per hour -

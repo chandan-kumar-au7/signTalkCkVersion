@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "Meeting #01 ",
+    "type": "On Site",
+    "amount": "800",
+    "date": "21th Dec",
+    "time": "11:00 AM",
+    "duration": "2 Hours",
+    "totalapplicants": "6",
+    "btntype": "View Applicants"
+  },
+  {
+    "id": 2,
+    "title": "Meeting #02 ",
+    "type": "Remote",
+    "amount": "800",
+    "date": "21th Dec",
+    "time": "11:00 AM",
+    "duration": "8 Hours/Day",
+    "totalapplicants": "12",
+    "btntype": "View Applicants"
+  },
+  {
+    "id": 3,
+    "title": "Meeting #04 ",
+    "type": "On Site",
+    "amount": "1200",
+    "date": "21th Dec",
+    "time": "11:00 AM",
+    "duration": "8 Hours/Day",
+    "totalapplicants": "6",
+    "btntype": "View Applicants"
+  },
+  {
+    "id": 4,
+    "title": "Meeting #04 ",
+    "type": "On Site",
+    "amount": "800",
+    "date": "21th Dec",
+    "time": "11:00 AM",
+    "duration": "2 Hours",
+    "totalapplicants": "6",
+    "btntype": "View Applicants"
+  },
+  {
+    "id": 5,
+    "title": "Meeting #05 ",
+    "type": "On Site",
+    "amount": "800",
+    "date": "21th Dec",
+    "time": "11:00 AM",
+    "duration": "2 Hours",
+    "totalapplicants": "6",
+    "btntype": "View Applicants"
+  },
+  {
+    "id": 6,
+    "title": "Meeting #06 ",
+    "type": "On Site",
+    "amount": "800",
+    "date": "21th Dec",
+    "time": "11:00 AM",
+    "duration": "2 Hours",
+    "totalapplicants": "6",
+    "btntype": "View Applicants"
+  }
+]

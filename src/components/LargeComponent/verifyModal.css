@@ -1,21 +1,16 @@
-.signUp-modal{
-    margin-top: 1.8em;
-    height: 18em;
-    text-align: center;
-    border-radius: 10px;
+.signUp-modal {
+  margin-top: 1.8em;
+  height: 18em;
+  text-align: center;
+  border-radius: 10px;
 }
 
-
-.continue-btn{
-    background: #54ACF0;
-    color: white;
-    font-weight: 500;
-    width: 40%;
-    margin-top: 2em !important;
-    margin-bottom: 1em !important;
-    margin: auto;
-}
-
-.signUp-modal otpInput{
-    
+.continue-btn {
+  background: #54acf0;
+  color: white;
+  font-weight: 500;
+  width: 40%;
+  margin-top: 2em !important;
+  margin-bottom: 1em !important;
+  margin: auto;
 }

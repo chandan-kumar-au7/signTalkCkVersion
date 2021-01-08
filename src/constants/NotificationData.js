@@ -1,0 +1,21 @@
+export const NotificationData=[
+    {
+        id:1,
+        name:"manas",
+        img:"http//img.jpg",
+        timeStamp:"12-10-2020"
+    },
+    {
+        id:1,
+        name:"manas",
+        img:"http//img.jpg",
+        timeStamp:"12-10-2020"
+    }
+    ,
+    {
+        id:1,
+        name:"manas",
+        img:"http//img.jpg",
+        timeStamp:"12-10-2020"
+    }
+]

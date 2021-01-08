@@ -13,7 +13,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 //   borderRadius: "4px",
 // };
 
-function SignUpLogin({ setmodalState, modalState, clicked ,setVerify }) {
+function SignUpLogin({ setmodalState, modalState, clicked ,setVerify, isInterpreter, formData, setFormData, setPhoneModal }) {
   const [state, setState] = useState({
     base: "https://whispering-lake-75400.herokuapp.com",
     selected: "",
@@ -68,7 +68,16 @@ function SignUpLogin({ setmodalState, modalState, clicked ,setVerify }) {
         }}
       />
       {state.selected === "left" ? (
-        <LeftLogin state={state} setState={setState} />
+        <LeftLogin 
+          setVerify={setVerify} 
+          state={state} 
+          setState={setState} 
+          setmodalState={setmodalState} 
+          isInterpreter={isInterpreter}
+          formData={formData}  
+          setFormData={setFormData}
+          setPhoneModal={setPhoneModal}
+        />
       ) : (
         <RightLogin setVerify={setVerify} state={state} setState={setState} />
       )}

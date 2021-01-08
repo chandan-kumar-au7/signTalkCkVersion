@@ -28,3 +28,72 @@
   outline: none;
   font-size: 0.9em;
 }
+
+.InitiatePaymentbtn {
+  background: rgb(84, 172, 240);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 10px;
+}
+
+.step1parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.Step1Model {
+  width: 30em;
+  background-color: #171717 !important;
+  border-radius: 8px;
+}
+
+.trophyimg {
+  width: 300px;
+}
+
+.paragraphinsidedtep1 {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.continuebtn {
+  margin-top: -10px;
+}
+
+.inputFieldForStep2parent {
+  width: 60%;
+  margin-bottom: 40px;
+  border-radius: 5px;
+}
+
+.inputFieldForStep2 {
+  width: 100%;
+  height: 35px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+.inputFieldForStep3parent {
+  display: flex;
+  width: 50%;
+  height: 35px;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+  /* background: red; */
+}
+
+.childofinputStep3 {
+  flex: 1;
+}
+
+.extrainputFieldForStep3 {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}

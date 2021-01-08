@@ -1,0 +1,62 @@
+export const Languages = [{
+        "id": "15",
+        "label": "English",
+        "value": "English"
+    }, {
+        "id": "1",
+        "label": "Telugu",
+        "value": "Telugu"
+    }, {
+        "id": "2",
+        "label": "Hindi ",
+        "value": "Hindi "
+    }, {
+        "id": "3",
+        "label": "Gujarati",
+        "value": "Gujarati"
+    }, {
+        "id": "5",
+        "label": "Malayalam",
+        "value": "Malayalam"
+    }, {
+        "id": "6",
+        "label": "Marathi",
+        "value": "Marathi"
+    }, {
+        "id": "7",
+        "label": "Tamil",
+        "value": "Tamil"
+    }, {
+        "id": "8",
+        "label": "Punjabi",
+        "value": "Punjabi"
+    }, {
+        "id": "9",
+        "label": "Kannada",
+        "value": "Kannada"
+    }, {
+        "id": "10",
+        "label": "Manipuri",
+        "value": "Manipuri"
+    }, {
+        "id": "11",
+        "label": "Odia",
+        "value": "Odia"
+    }, {
+        "id": "12",
+        "label": "Nepali",
+        "value": "Nepali"
+    }, {
+        "id": "13",
+        "label": "Bengali",
+        "value": "Bengali"
+    }, {
+        "id": "14",
+        "label": "Kashmiri",
+        "value": "Kashmiri"
+    }, {
+        "id": "15",
+        "label": "Assamese",
+        "value": "Assamese"
+    }
+]

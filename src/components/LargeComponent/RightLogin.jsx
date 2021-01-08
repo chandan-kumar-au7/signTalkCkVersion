@@ -9,9 +9,7 @@ import MicrosoftLogin from "react-microsoft-login";
 import { withRouter } from "react-router-dom";
 import Input from "./Input";
 import Loader from "react-loader-spinner";
-import OtpInput from "react-otp-input";
 import VerifyModal from "./SignUpverificationModal";
-import { notifySucess, notifyWarning } from "../AlertComponent/ToastifyAlert";
 
 const iconStyle = {
   width: "30px",
@@ -32,7 +30,7 @@ function RightLogin({ state, setState, setVerify, ...props }) {
   const [loading, setLoading] = useState(false);
   const [errorMSG, seterrorMSG] = useState(false);
   const [message, setmessage] = useState("");
-  const [signUpVerifyModal, setSignUpVerifyModal] = useState(true);
+  const [signUpVerifyModal, setSignUpVerifyModal] = useState(false);
 
   if (nameok === true && mailok === true && passok === true) {
     state.fregsisterok = true;

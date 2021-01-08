@@ -63,9 +63,7 @@ const ContractConfirmMsg = ({
                 style={{
                     marginLeft : '1rem'
                 }}
-                // onClick={()=>
-                //     // setSteps(4)
-                // }
+             
             >Continue</button>
         </div>
     </div>

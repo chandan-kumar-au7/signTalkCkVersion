@@ -1,7 +1,7 @@
 .mainParent {
   position: absolute;
   top: 50%;
-  left: 35%;
+  left: 220px;
 }
 
 .BlueColorDiv {
@@ -21,7 +21,7 @@
   color: rgb(84, 172, 240);
 }
 
-.cost {
+.cost2 {
   font-size: 2.2em;
   font-weight: 600;
   margin-right: 0.6em;

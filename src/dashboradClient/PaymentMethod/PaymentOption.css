@@ -1,0 +1,167 @@
+.paymentMethodParent {
+  display: flex;
+  /* height: auto; */
+  width: 90%;
+  margin: auto;
+}
+
+.paymentMethodChild1 {
+  flex: 1.2;
+  font-size: 16px;
+}
+
+.linkInsidePayment {
+  padding: 15px;
+  border-radius: 5px 0px 0px 5px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+}
+
+.imgSizeForPaymentOption {
+  width: 20px;
+}
+
+.paymentMethodChild2 {
+  flex: 3;
+  background: #272727;
+  border-radius: 0px 5px 5px 5px;
+  padding: 30px;
+}
+
+.accNAndIfsc {
+  display: flex;
+}
+
+.accNAndIfscChild1 {
+  flex: 3;
+}
+.accNAndIfscChild2 {
+  flex: 1;
+}
+
+.inputInsideaccNAndIfsc {
+  width: 90%;
+  background: #171717;
+  border-radius: 5px;
+  border-style: none;
+  height: 35px;
+  padding: 0px 20px;
+  color: white;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* 2nd part after click on UPI  */
+
+.labelInsideAccIfsc {
+  font-size: 14px;
+}
+
+.spaninsideAddUpiChild1 {
+  position: absolute;
+  margin-top: -25px;
+}
+
+.addUpiParent111 {
+  display: flex;
+}
+
+.addUpiChild1 {
+  flex: 1;
+  text-align: center;
+  /* background: red; */
+  justify-content: space-between;
+  margin-left: 10px;
+}
+
+.addUpiChild2 {
+  flex: 2;
+}
+
+.addUpiIconSize {
+  width: 40px;
+}
+
+.bhimIconSize {
+  width: 30px;
+  height: 40px;
+  margin-left: 2px;
+}
+.googleIconSize {
+  margin-left: 10px;
+}
+
+.phonepayIconSize {
+  margin-left: 10px;
+}
+
+.gpay {
+  margin-left: -20px;
+}
+
+.phonepay {
+  margin-left: -10px;
+}
+
+.parentofexapleatupi {
+  display: flex;
+}
+
+.exapleatupi {
+  flex: 1;
+}
+.exapleatupivarify {
+  flex: 1;
+}
+
+.backgroundPink {
+  background: #7e21db;
+  color: white;
+}
+
+.colorPink {
+  color: #7e21db;
+}
+
+.flexsmall {
+  flex: 1;
+}
+
+.flexbig {
+  flex: 5;
+}
+
+.amazonpayimage {
+  margin-left: 15%;
+}
+.freechargeimage {
+  margin-left: 15%;
+}
+
+.payzimage {
+  margin-left: 10%;
+}
+.mobiquickimage {
+  margin-left: 10%;
+}
+.sbiyonoimage {
+  margin-left: 10%;
+}
+.airtelimage {
+  margin-left: 20%;
+}
+
+.paypalBreak {
+  position: absolute;
+  margin-top: -10px;
+  margin-left: -20px;
+}
+
+.div2iconmargintop {
+  margin-top: 30px;
+  margin-left: -10px;
+}

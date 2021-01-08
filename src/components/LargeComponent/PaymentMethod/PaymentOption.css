@@ -1,0 +1,203 @@
+.paymentMethodParent {
+  display: flex;
+  /* height: auto; */
+  width: 90%;
+  margin: auto;
+}
+
+.paymentMethodChild1 {
+  flex: 1;
+  font-size: 16px;
+}
+
+.linkInsidePayment {
+  padding: 15px;
+  border-radius: 5px 0px 0px 5px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+}
+
+.imgSizeForPaymentOption {
+  width: 20px;
+}
+
+.paymentMethodChild2 {
+  flex: 3;
+  background: #272727;
+  border-radius: 0px 5px 5px 5px;
+  padding: 30px;
+}
+
+.accNAndIfsc {
+  display: flex;
+}
+
+.accNAndIfscChild1 {
+  flex: 3;
+}
+.accNAndIfscChild2 {
+  flex: 1;
+}
+
+.inputInsideaccNAndIfsc {
+  width: 90%;
+  background: #171717;
+  border-radius: 5px;
+  border-style: none;
+  height: 35px;
+  padding: 0px 20px;
+  color: white;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* 2nd part after click on UPI  */
+
+.labelInsideAccIfsc {
+  font-size: 14px;
+}
+
+.spaninsideAddUpiChild1 {
+  position: absolute;
+  margin-top: -25px;
+}
+
+.addUpiParent {
+  display: flex;
+}
+
+.addUpiChild1 {
+  flex: 1;
+  text-align: center;
+  /* background: red; */
+  justify-content: space-between;
+  margin-left: 10px;
+}
+
+.addUpiChild2 {
+  flex: 2;
+}
+
+.addUpiIconSize {
+  width: 40px;
+}
+
+.bhimIconSize {
+  width: 30px;
+  /* background: yellow; */
+  height: 40px;
+  margin-left: 2px;
+}
+.googleIconSize {
+  margin-left: 10px;
+}
+/* .bhimIconSize {
+
+  margin-left: 2px;
+} */
+
+.phonepayIconSize {
+  margin-left: 10px;
+}
+
+.gpay {
+  margin-left: -20px;
+}
+
+.phonepay {
+  margin-left: -10px;
+}
+
+.parentofexapleatupi {
+  display: flex;
+}
+
+.exapleatupi {
+  flex: 1;
+}
+.exapleatupivarify {
+  flex: 1;
+}
+
+.ParentOfCardForMaPaMethod1st {
+  background: #272727;
+  height: 70px;
+  min-width: 265px;
+  border-radius: 5px;
+  margin-right: 20px;
+  display: flex;
+}
+
+.ParentOfCardForMaPaMethod {
+  background: #272727;
+  height: 80px;
+  min-width: 230px;
+  border-radius: 5px;
+  margin-right: 20px;
+  display: flex;
+}
+
+.LogoInsideMPCParent {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  /* background: red; */
+  margin: auto 10px;
+}
+
+.LogoInsideMPCParent1st {
+  height: 50px;
+  width: 50px;
+  /* border-radius: 50%; */
+  margin: 15px 10px;
+}
+
+.LogoInsideMPC {
+  margin: 5px 0px 0px 5px;
+  height: 40px;
+  width: 40px;
+  /* border-radius: 50%; */
+}
+
+.LogoInsideMPC1st {
+  margin: 5px 0px 0px 5px;
+  height: 30px;
+  width: 40px;
+}
+
+.whitetext {
+  color: white;
+}
+
+.afterlogoInsideMPC {
+  margin: auto;
+  margin-left: 0px;
+  text-align: left;
+  line-height: 1.2;
+  font-size: 1.263vw;
+}
+
+.beforelogoInsideMPC {
+  margin: auto;
+  margin-left: 20px;
+  text-align: left;
+  line-height: 1.2;
+  font-size: 1.263vw;
+}
+
+.MpaymentMethod {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.MpaymentMethod::-webkit-scrollbar {
+  display: none;
+}

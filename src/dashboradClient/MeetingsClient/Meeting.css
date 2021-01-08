@@ -1,0 +1,47 @@
+.MeetingParent {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.Meetingchild1 {
+  align-self: center;
+}
+
+.mchild1 {
+  margin-top: 40px;
+  color: white;
+  font-size: 26px;
+}
+.mchild2 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.mchildasbtn {
+  margin-top: 20px;
+  background-color: #7e21db;
+  color: white;
+  border-radius: 5px;
+  padding: 6px 30px;
+  border: none;
+}
+
+.mhrshouldup {
+  margin-top: -60px;
+  height: 2px;
+}
+
+/* .upcomingmeetingparent {
+  background: red;
+} */
+
+.amountSection {
+  margin-top: 15px;
+}
+
+.reqiredIntrepreter {
+  margin-left: 80px;
+}

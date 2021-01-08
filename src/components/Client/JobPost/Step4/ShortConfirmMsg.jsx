@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ShortConfirmMsg.css'
+import infoIcon from '../../../../assets/images/Icon feather-info.svg'
 
 const ShortConfirmMsg = ({
     formData, 
-    setFormData, 
-    closeModal,
-    initialState,
-    setSteps
+    setSteps,
+    props
 }) => {
+
     return (
+        <>
         <div className='short-confirm-msg'>
             <div className="header">
                 <p style={{ color : 'white', textAlign: "center", fontWeight : 500, fontSize : '1.1em'}}>Confirm Job Details</p>
@@ -29,6 +30,11 @@ const ShortConfirmMsg = ({
                     <p>:</p>
                     <p className='w-40'>{formData.region}</p>
                 </div>
+                <div className="duration">
+                    <p className='w-40'>Duration</p>
+                    <p>:</p>
+                    <p className='w-40'>{`${formData.shortDue.durationhr}:${formData.shortDue.durationm}`}</p>
+                </div>
                 <div className="start-date">
                     <p className='w-40'>Start Date</p>
                     <p>:</p>
@@ -47,7 +53,10 @@ const ShortConfirmMsg = ({
                 <div className="amount">
                     <p className='w-40'>Amount</p>
                     <p>:</p>
-                    <p className='w-40'>{formData.shortDue.amount}</p>
+                    <div className='w-40 d-flex' style={{ height : '50%'}}>
+                        <p>{formData.shortDue.amount} Rs.</p>
+                        <img width={20} src={infoIcon} className='ml-3' alt=""/>
+                    </div>
                 </div>
                 <div className="description">
                     <p className='w-40'>Description</p>
@@ -55,20 +64,19 @@ const ShortConfirmMsg = ({
                     <p className='w-40' style={{maxHeight : '5em', overflow : "auto", fontSize : '.9rem '}}>{formData.shortDue.description}</p>
                 </div>
             </div>
-            <div className="btns  d-flex">
-            <button onClick={() => {
+            <div className="btns d-flex">
+                <button onClick={() => {
                     setSteps(3)
                 }}>Back</button>
                 <button 
                     style={{
                         marginLeft : '1rem'
                     }}
-                    // onClick={()=>
-                    //     // setSteps(4)
-                    // }
                 >Continue</button>
             </div>
         </div>
+        
+        </>
     )
 }
 

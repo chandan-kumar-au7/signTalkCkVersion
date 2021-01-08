@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "username": "Avesh Khanna",
+    "type": "On Site",
+    "address": "Sarjapur Road, Bengaluru, Karnataka ",
+    "date": "04/06/2020 at 04.39 PM",
+    "rating": "4.5"
+  },
+  {
+    "id": 2,
+    "username": "Gurpreet Singh",
+    "type": "Remote",
+    "address": "Marthalli, Bengaluru, Karnataka ",
+    "date": "04/06/2020 at 04.30 PM",
+    "rating": "3.5"
+  },
+  {
+    "id": 3,
+    "username": "Chandan Kumar",
+    "type": "On Site",
+    "address": "Bokaro Stell City , Jharkhand  ",
+    "date": "04/06/2020 at 04.30 PM",
+    "rating": "5.0"
+  },
+  {
+    "id": 4,
+    "username": "Manas Sahoo",
+    "type": "Remote",
+    "address": "Jamsadpur",
+    "date": "04/06/2020 at 04.30 PM",
+    "rating": "5.0"
+  }
+]

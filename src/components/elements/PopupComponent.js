@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Modal } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import { centralStyle } from "./centralStyle";
@@ -16,7 +16,8 @@ export const PopupComponent = ({
       onOpen={() => setmodalState(true)}
       open={modalState}
       style={centralStyle.ModalLogin}
-      dimmer={"blurring"}>
+      dimmer={"blurring"}
+    >
       <Modal.Content style={{ backgroundColor: "transparent" }}>
         {Content}
       </Modal.Content>

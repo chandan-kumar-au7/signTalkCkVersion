@@ -1,103 +1,38 @@
 import React, { useState, useEffect } from "react";
-import Axios from "axios";
-import VerifyForm from "./VerifyForm";
-import "./style.css";
-import { Bell } from "react-feather";
-import DetailsRoundedIcon from "@material-ui/icons/DetailsRounded";
 
+import UpcommingJobCard from "./Cards/UpcommingJobCard";
+import Navbar from "../Navbar/Navbar";
+import insurance from "../../../assets/images/streamline-icon-insurance-hands@140x140.svg";
 import Calendar from "react-calendar";
-import { withRouter } from "react-router-dom";
+
 import "react-calendar/dist/Calendar.css";
-function Blank({ history, ...props }) {
-  const [state, setState] = useState({
-    o: false,
-    phone: "",
-    formState: 0,
-    otp: "",
-    matchedOtp: "",
-    disabled: true,
-    verified: false,
-    base: "https://whispering-lake-75400.herokuapp.com",
-    loader: false,
-    phoneVer: false,
-    cityVer: false,
-    langVer: false,
-    backVer: false,
-    timer: 0,
-    active: "",
-  });
+import "./style.css";
 
-  const [DisplayDropdown, setDisplayDropdown] = useState(false);
+function Dashboard() {
+  const [UpcommingJobData, setUpcommingJobData] = useState([]);
 
-  const HandleDisplyDropdown = () => {
-    if (DisplayDropdown) {
-      setDisplayDropdown(false);
-    } else {
-      setDisplayDropdown(true);
-    }
+  // fetch upcomming job db
+  const FetchUpcommingJobJson = () => {
+    fetch("UpcommingJobData.json", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then(function (response) {
+        // console.log(response);
+        return response.json();
+      })
+      .then(function (myJson) {
+        console.log("myjson ", myJson);
+        setUpcommingJobData(myJson);
+      });
   };
 
   useEffect(() => {
-    if (localStorage.getItem("token") === null) history.push("/interpretly");
-    getData();
-    window.onclick = function (event) {
-      if (!event.target.matches(".sowthedic")) {
-        setDisplayDropdown(false);
-      }
-    };
-  }, [history]);
+    FetchUpcommingJobJson();
+  }, []);
 
-  async function getData() {
-    try {
-      let { data } = await Axios({
-        method: "get",
-        url: `${state.base}/Home/profile`,
-        headers: {
-          token: localStorage.getItem("token"),
-        },
-      });
-
-      if (data.user.mobile_no === undefined) {
-        return setState({ ...state, o: true });
-      } else {
-        return setState({ ...state, o: false });
-      }
-    } catch (err) {
-      history.push("/interpretly");
-      console.log(err.message);
-    }
-  }
-
-  async function sendOtp() {
-    try {
-      console.log(state.phone.slice(2));
-      setState({ ...state, loader: true });
-      const { data } = await Axios.get(
-        `${state.base}/Home/requestotp?mobile_no=${state.phone.slice(2)}`,
-        {
-          headers: {
-            token: localStorage.getItem("token"),
-          },
-        }
-      );
-      // const {data} = await Axios.post(`${state.base}/Register/resetpass/i?type=mobile&mobile_no=${state.phone.slice(2)}`,{
-      //     headers: {
-      //         token: localStorage.getItem("token"),
-      //     }
-      // })
-      if (data.err === undefined)
-        setState({ ...state, loader: false, formState: 1, timer: 300 });
-      else {
-        setState({ ...state, loader: false, timer: 300 });
-        console.log(data);
-      }
-    } catch (err) {
-      setState({ ...state, loader: false });
-      console.log(err.message);
-    }
-  }
-
-  const closeModal = () => setState({ ...state, o: false });
   const arr = [1, 1, 1, 1, 1, 1, 1, 1];
 
   return (
@@ -108,76 +43,33 @@ function Blank({ history, ...props }) {
         position: "relative",
       }}
     >
-      <VerifyForm
-        state={state}
-        setState={setState}
-        closeModal={closeModal}
-        sendOtp={sendOtp}
-        getData={getData}
-      />
+      {/* Navbar */}
 
-      <div
-        className="col-12 pl-3 pt-3 p-0 pb-5"
-        style={{
-          height: "80px",
-          boxShadow: "0px 5px 15px black",
-          position: "sticky",
-          top: "0px",
-          right: "0px",
-        }}
-      >
-        <h3 className="fo1 font-weight-light h3Forprofile">Dashboard</h3>
-
-        <div className="rounded-circle p-2 c4 bellIcon ">
-          <Bell />
-        </div>
-
-        <div className="NavDropDown sowthedic" onClick={HandleDisplyDropdown}>
-          <div className="NavDropDownchild sowthedic">
-            <div
-              style={{
-                position: "absolute",
-                top: "50%",
-                fontSize: "16px",
-                transform: "translate(25px, -50%)",
-              }}
-              className="sowthedic"
-            >
-              Neo Ho..
-            </div>
-            <div className="NavDropDownchild2 sowthedic">
-              <DetailsRoundedIcon className="DetailsRoundedIcon sowthedic" />
-            </div>
-          </div>
-        </div>
-
-        {DisplayDropdown && (
-          <ul className="dropdownMenu">
-            <li className="dropdownMenuli">Open Profile</li>
-            <li className="dropdownMenuli">Account Setting</li>
-            <li className="dropdownMenuli">Privacy Policy</li>
-            <li
-              className="dropdownMenuli"
-              onClick={() => {
-                localStorage.removeItem("token");
-                history.push("/interpretly");
-              }}
-            >
-              Log Out
-            </li>
-          </ul>
-        )}
-      </div>
+      <Navbar title={"Dashboard"} />
 
       <div className="col-12 pb-5">
         <h4 className="text-light font-weight-light mt-3 ml-4">
           Upcoming Jobs
         </h4>
-        <div className="container text-center">
-          <p className="f20">No upcoming jobs at the moment</p>
-          {/* <h3 className='text-light font-weight-light'>Find a job now</h3>
-          <button className='btn c4 text-light'>Go Now</button> */}
-        </div>
+        {UpcommingJobData.length > 0 ? (
+          UpcommingJobData.map((data) => (
+            <UpcommingJobCard
+              key={data.id}
+              id={data.id}
+              title={data.title}
+              type={data.type}
+              timestamp={data.timeStamp}
+              address={data.address}
+              btntype={data.btntype}
+              logo={insurance}
+            />
+          ))
+        ) : (
+          <div className="container text-center">
+            <p className="f20">No upcoming jobs at the moment</p>
+          </div>
+        )}
+
         <hr className="c1 col-10 ml-auto mt-5 mb-5 mr-auto" />
 
         <div className="col-12 row m-auto">
@@ -201,11 +93,7 @@ function Blank({ history, ...props }) {
                 <h4 className="co">See all &gt;</h4>
               </div>
             </div>
-            <div className=" col-12 mt-4 container text-center">
-              {/* <p className='f20'>No upcoming jobs at the moment</p> */}
-              {/* <h3 className='text-light font-weight-light'>Find a job now</h3>
-          <button className='btn c4 text-light'>Go Now</button> */}
-            </div>
+            <div className=" col-12 mt-4 container text-center"></div>
             <div
               className="col-12 mt-4"
               style={{ maxHeight: "400px", overflow: "scroll" }}
@@ -236,4 +124,4 @@ function Blank({ history, ...props }) {
   );
 }
 
-export default withRouter(Blank);
+export default Dashboard;

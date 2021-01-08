@@ -1,5 +1,6 @@
 .client-job-modal{
-    height: 30em;
+    height: 32em;
     width: 37em;
     background-color: #171717;
+    border-radius: 8px;
 }
