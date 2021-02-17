@@ -8,7 +8,7 @@ import "./Navbar.css";
 
 let icon = require("../../assets/images/message.svg");
 
-function Navbar({ Backicon, title, ShowPaymentMethod }) {
+function Navbar({ Backicon, title, SetShowPaymentMethod }) {
   const history = useHistory();
 
   const [DisplayNotification, setDisplayNotification] = useState(false);
@@ -60,6 +60,8 @@ function Navbar({ Backicon, title, ShowPaymentMethod }) {
         setDisplayNotification(false);
       }
     };
+
+    return SetShowPaymentMethod;
   }, []);
 
   return (
@@ -78,7 +80,7 @@ function Navbar({ Backicon, title, ShowPaymentMethod }) {
         {Backicon && (
           <span
             style={{ cursor: "pointer" }}
-            onClick={() => ShowPaymentMethod(false)}
+            onClick={() => SetShowPaymentMethod(false)}
           >
             <Backicon />
           </span>
@@ -182,7 +184,11 @@ function Navbar({ Backicon, title, ShowPaymentMethod }) {
       {DisplayDropdown && (
         <ul className="dropdownMenu">
           <li className="dropdownMenuli">Open Profile</li>
+          <li className="dropdownMenuli">
+            <span className="dot">&#8226;</span> Take A Tour
+          </li>
           <li className="dropdownMenuli">Account Setting</li>
+          <li className="dropdownMenuli">Refund Policy</li>
           <li className="dropdownMenuli">Privacy Policy</li>
           <li
             className="dropdownMenuli"

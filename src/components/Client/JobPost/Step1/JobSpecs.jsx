@@ -10,6 +10,7 @@ import {
   } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Select, MenuItem } from "@material-ui/core";
+import { Link } from 'react-router-dom';
 
 const places = [
     { value: 'Bangalore', label: 'Bangalore' },
@@ -34,7 +35,8 @@ const JobSpecs = ({
     setFormData, 
     closeModal,
     initialState,
-    setSteps
+    setSteps,
+    isOnBoard
  }) => {
      
     return (
@@ -157,10 +159,21 @@ const JobSpecs = ({
                 </div>
             </div>
             <div className="btns d-flex">
-                <button onClick={() => {
-                    closeModal("")
-                    setFormData(initialState)
-                }}>Cancel</button>
+                {
+                    isOnBoard ? 
+                    <Link
+                        to='/interpretly'
+                    >
+                        <button onClick={() => {
+                            setFormData(initialState)
+                        }}>Cancel</button>
+                    </Link>
+                    :
+                        <button onClick={() => {
+                            closeModal("")
+                            setFormData(initialState)
+                        }}>Cancel</button>
+                }
                 <button 
                     onClick={() => setSteps(2)} 
                     style={{

@@ -304,7 +304,7 @@ function Profile(props) {
     >
       <Spinner loading={loading} />
       {ShowPaymentMethod ? (
-        <PaymentOption ShowPaymentMethod={setShowPaymentMethod} />
+        <PaymentOption SetShowPaymentMethod={setShowPaymentMethod} />
       ) : (
         <>
           {/* -------------- navbar ----------------- */}

@@ -25,7 +25,7 @@ import cpaypalIcon from "../../assets/images/paypalcon.png";
 
 import "./PaymentOption.css";
 
-function PaymentOption({ ShowPaymentMethod }) {
+function PaymentOption({ SetShowPaymentMethod }) {
   const [ShowManagePaymentMethod, setShowManagePaymentMethod] = useState(false);
 
   const [colorforBank, setcolorforBank] = useState(true);
@@ -94,7 +94,7 @@ function PaymentOption({ ShowPaymentMethod }) {
     <div>
       <Navbar
         title={`Payment Method`}
-        ShowPaymentMethod={ShowPaymentMethod}
+        SetShowPaymentMethod={SetShowPaymentMethod}
         Backicon={ArrowBackIosIcon}
       />
 

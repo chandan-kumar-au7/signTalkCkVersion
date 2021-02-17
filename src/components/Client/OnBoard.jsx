@@ -3,11 +3,11 @@ import ClientJobPost from './JobPost/ClientJobPost'
 import Header from '../../components/layout/Header';
 import Footer from '../../components/layout/Footer';
 
-const OnBoard = () => {
+const OnBoard = (props) => {
     return (
         <>
-            <div style={{ width: '50%', margin: ' 5em auto' }}>
-                <ClientJobPost 
+            <div style={{ width: '50%', margin: '5em auto' }}>
+                <ClientJobPost
                     onBoard={true}
                 />
             </div>

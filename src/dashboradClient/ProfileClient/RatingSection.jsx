@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import stopwatchicon from "../../assets/images/stopwatchicon.png";
-import usericon from "../../assets/images/usericon.png";
-import certifiedicon from "../../assets/images/certifiedicon.png";
+import humanrecourceicon from "../../assets/images/humanrecource.svg";
+import hearticon from "../../assets/images/heart.svg";
 import Divider from "@material-ui/core/Divider";
 
 function RatingSection() {
@@ -12,19 +11,19 @@ function RatingSection() {
   const [Reviews, setReviews] = useState("");
 
   useEffect(() => {
-    setdiv1per("4.8");
-    setdiv2per("4.2");
+    setdiv1per("138");
+    setdiv2per("13");
     setdiv3per("3.2");
-    setdiv4per("89");
-    setReviews("72");
+    setdiv4per("24");
+    setReviews("12");
   }, []);
 
   return (
     <div className="col-12 ">
-      <h4 style={{ marginLeft: "3vw" }}>Ratings</h4>
+      <h4 style={{ marginLeft: "3vw" }}>Your Impact</h4>
       <div className="row" style={{ marginLeft: "5.5vw", textAlign: "center" }}>
         <div
-          className="col-2"
+          className="col-3"
           style={{
             background: "#272727",
             height: "160px",
@@ -34,18 +33,21 @@ function RatingSection() {
         >
           <div className="stopwatch">
             <div className="stopwatchimgclient">
-              <img src={stopwatchicon} alt="stopwatch" />
+              <img src={hearticon} alt="stopwatch" />
             </div>
             <br />
             <br />
             <div>Hospatiality</div>
             <div>
-              <span style={{ color: "#24e5af" }}>{div1per}</span> / 5.0
+              <span style={{ color: "#24e5af" }}>
+                {" "}
+                <b> {div1per} </b>
+              </span>
             </div>
           </div>
         </div>
         <div
-          className="col-2"
+          className="col-3"
           style={{
             background: "#272727",
             height: "160px",
@@ -56,31 +58,14 @@ function RatingSection() {
         >
           <div className="stopwatch">
             <div className="stopwatchimg col">
-              <img src={usericon} alt="usericon" />
+              <img src={humanrecourceicon} alt="usericon" />
             </div>
             <div className="">Professionalism</div>
             <div className="">
-              <span style={{ color: "#24e5af" }}>{div2per}</span> / 5.0
-            </div>
-          </div>
-        </div>
-        <div
-          className="col-2"
-          style={{
-            background: "#272727",
-            height: "160px",
-            borderRadius: "10px",
-            textAlign: "center",
-            marginLeft: "1rem",
-          }}
-        >
-          <div className="stopwatch">
-            <div className="stopwatchimg">
-              <img src={certifiedicon} alt="certifiedicon" />
-            </div>
-            <div className="">Quality</div>
-            <div className="">
-              <span style={{ color: "#ffa173" }}> {div3per} </span> / 5.0
+              <span style={{ color: "#24e5af" }}>
+                {" "}
+                <b>{div2per} </b>
+              </span>
             </div>
           </div>
         </div>
@@ -104,10 +89,16 @@ function RatingSection() {
           }}
         >
           <div className="col">
-            <h1 style={{ color: "#24e5af" }}>{div4per} %</h1>
+            <h2 style={{ color: "#24e5af" }}>&#8377;{div4per}K</h2>
           </div>
-          <div className="col">Recommended By</div>
-          <div className="col"> ( {Reviews} reviews)</div>
+          <div style={{ color: "white" }} className="col colorwhite">
+            {" "}
+            <b>Income Generated</b>{" "}
+          </div>
+          <div style={{ color: "white" }} className="col">
+            <b> for Interperters</b>
+          </div>
+          <div className="col"> ( {Reviews} Meetings )</div>
         </div>
       </div>
     </div>

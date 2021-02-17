@@ -11,7 +11,10 @@ import Spinner from "./dashboard/smallComponent/Spinner";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import VerifyModal from "./SignUpverificationModal";
-import { withRouter } from "react-router-dom";
+import {withRouter} from "react-router-dom"
+import { useSelector, useDispatch } from 'react-redux'
+import { setClicked, setVerify, setmodalState } from '../../redux/Actions/HeroActions'
+import { setClientSignupModal, setEmailVerifyModal } from "../../redux/Actions/ModalActions";
 
 const iconStyle = {
   width: "30px",
@@ -24,14 +27,7 @@ const validation = {
   margin: "0px",
   padding: "0px",
 };
-function LeftLogin({
-  state,
-  setState,
-  setVerify,
-  formData,
-  setFormData,
-  ...props
-}) {
+function LeftLogin({ state, setState, formData, setFormData, ...props }) {
   const [nameok, setnameok] = useState(true);
   const [mailok, setmailok] = useState(true);
   const [passok, setpassok] = useState(true);
@@ -39,6 +35,10 @@ function LeftLogin({
   const [signUpVerifyModal, setSignUpVerifyModal] = useState(false);
   const [message, setmessage] = useState("");
   const [errorMSG, seterrorMSG] = useState(false);
+
+  const dispatch = useDispatch()
+  const heroState = useSelector(state => state.HeroState)
+  const { emailVerificationModal } = useSelector(state => state.ModalState)
 
   if (nameok === true && mailok === true && passok === true) {
     state.iregsisterok = true;
@@ -62,26 +62,32 @@ function LeftLogin({
     state.iresetok = false;
   }
 
-  // async function login() {
-  //   try {
-  //     setLoading(true);
-  //     const { data } = await Axios.post(`${state.base}/Login/user`, {
-  //       email: state.imail,
-  //       password: state.ipass,
-  //     });
-  //     localStorage.setItem("userToken", data.token);
-  //     if(data){
-  //       setLoading(false);
-  //     }
-  //   } catch (err) {
-  //     setLoading(false);
-  //     setVerify(err.response.data.email);
-  //     setmessage(err.response.data.message);
+  async function login() {
+    try {
+      setLoading(true);
+      const { data } = await Axios.post(`${state.base}/Login/user`, {
+        email: state.imail,
+        password: state.ipass,
+      });
+      localStorage.setItem("userToken", data.token);
+      if(data){
+        setLoading(false);
+        // if(data.email){
+        //   dispatch(setEmailVerifyModal(true));
+        // }
+      } 
+    } catch (err) {
+      err.response.data.email && (
+        dispatch(setEmailVerifyModal(true))
+      )
+      setLoading(false);
+      dispatch(setVerify(err.response.data.email));
+      setmessage(err.response.data.message);
 
   //     seterrorMSG(true);
   //     console.log(err.message);
-  //   }
-  // }
+    }
+  }
 
   async function resetPass() {
     try {
@@ -109,13 +115,21 @@ function LeftLogin({
             : null,
         password: state.ipass,
       });
+      dispatch(setVerify(response.data.details[0].email));
+      setLoading(true);
+      if(response.data){
+        dispatch(setEmailVerifyModal(true));
+        // dispatch(setClientSignupModal(false))
+        // setSignUpVerifyModal(true);
+      }
       setSignUpVerifyModal(true);
 
-      setVerify(response.data);
+      // setVerify(response.data);
       setLoading(true);
       setmessage(`register sucessfully!\n${response.data.message}`);
       seterrorMSG(true);
       if (response.data.details.length > 0) {
+        props.setpopUpClicked(false);
         setLoading(false);
       }
     } catch (err) {
@@ -132,13 +146,17 @@ function LeftLogin({
 
   return (
     <>
-      {signUpVerifyModal === true && (
-        <VerifyModal
-          formData={props.formData}
-          setFormData={props.setFormData}
-          isInterpreter={props.isInterpreter}
-        />
-      )}
+      { emailVerificationModal && 
+      // { signUpVerifyModal && 
+            <VerifyModal 
+              isOnBoard={props.isOnBoard}
+              phoneModal={props.phoneModal}
+              setPhoneModal={props.setPhoneModal}
+              formData={props.formData}
+              setFormData={props.setFormData}
+              isInterpreter={props.isInterpreter}
+            />       
+      }
       <div className="p-0 col-12" style={{ backgroundColor: "transparent" }}>
         <ToastContainer
           style={{ position: "absolute", top: "0px", left: "0px" }}
@@ -146,7 +164,9 @@ function LeftLogin({
         <Spinner loading={loading} />
         <div className="row col-12 p-0 m-auto">
           <div
-            className="col-6"
+            className={
+              heroState.clicked == 'left' ? 'col-12' : 'col-6'
+            }
             style={{
               height: "60px",
               backgroundColor: "#7E21DB",
@@ -158,21 +178,25 @@ function LeftLogin({
           >
             <h6 className="mt-2 text-light text-center">Find an Interpreter</h6>
           </div>
-          <div
-            className="col-6 text-center"
-            onClick={() => setState({ ...state, selected: "right" })}
-            style={{
-              backgroundColor: "#4F4F4F",
-              borderRadius: "5px 5px 0px 0px",
-              fontSize: "20px",
-              margin: "0 0 0 0",
-              cursor: "pointer",
-            }}
-          >
-            <h3 style={{ color: "white", fontSize: "20px" }}>
-              I'm an Interpreter
-            </h3>
-          </div>
+          {
+            heroState.clicked !== 'left' && (
+              <div
+                className="col-6 text-center"
+                onClick={() => setState({ ...state, selected: "right" })}
+                style={{
+                  backgroundColor: "#4F4F4F",
+                  borderRadius: "5px 5px 0px 0px",
+                  fontSize: "20px",
+                  margin: "0 0 0 0",
+                  cursor: "pointer",
+                }}
+              >
+                <h3 style={{ color: "white", fontSize: "20px" }}>
+                  I'm an Interpreter
+                </h3>
+              </div>
+            )
+          }
         </div>
         <div
           className="row m-auto col-12 p-2 rounded"
@@ -404,25 +428,35 @@ function LeftLogin({
                 ) : (
                   <button
                     className="border-0 mt-2 mb-2 text-light pt-2 pb-2 pl-3 pr-3"
-                    // onClick={
-                    //   state.iloginok === true
-                    //     ? login
-                    //     : () => {
-                    //         console.log(state.iloginok);
-                    //         console.log(state.ipass, state.imail);
-                    //       }
-                    // }
                     onClick={
-                      () => {
-                        let token = localStorage.getItem("token");
-                        if (token != null) {
-                          localStorage.removeItem("token");
-                        }
-                        localStorage.setItem("cToken", Math.random() * 1000);
-                        props.history.push("/interpretly/dashboardclient");
-                      }
-                      // setSteps(4)
+                      heroState.clicked == 'left' ?
+                        state.iloginok === true
+                          ? login
+                          : () => {
+                              console.log(state.iloginok);
+                              console.log(state.ipass, state.imail);
+                            }
+                        :
+                            () => {
+                              let token = localStorage.getItem("token");
+                              if (token != null) {
+                                localStorage.removeItem("token");
+                              }
+                              localStorage.setItem("cToken", Math.random() * 1000);
+                              props.history.push("/interpretly/dashboardclient");
+                            }
                     }
+                    // onClick={
+                    //   () => {
+                    //     let token = localStorage.getItem("token");
+                    //     if (token != null) {
+                    //       localStorage.removeItem("token");
+                    //     }
+                    //     localStorage.setItem("cToken", Math.random() * 1000);
+                    //     props.history.push("/interpretly/dashboardclient");
+                    //   }
+                    //   // setSteps(4)
+                    // }
                     style={{
                       backgroundColor: "#6B20B6",
                       fontSize: "16px",
@@ -525,4 +559,4 @@ function LeftLogin({
   );
 }
 
-export default withRouter(LeftLogin);
+export default withRouter(LeftLogin)

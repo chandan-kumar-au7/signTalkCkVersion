@@ -10,6 +10,10 @@ import { withRouter } from "react-router-dom";
 import Input from "./Input";
 import Loader from "react-loader-spinner";
 import VerifyModal from "./SignUpverificationModal";
+import { notifySucess, notifyWarning } from "../AlertComponent/ToastifyAlert";
+import { useSelector, useDispatch } from 'react-redux'
+import { setVerify, setClicked } from '../../redux/Actions/HeroActions'
+// import { setDashboard } from '../../redux/Actions/Interpreter/interpreterTempActions'
 
 const iconStyle = {
   width: "30px",
@@ -23,7 +27,7 @@ const validation = {
   padding: "0px",
 };
 const primary = "#54ACF0";
-function RightLogin({ state, setState, setVerify, ...props }) {
+function RightLogin({ state, setState, ...props }){
   const [nameok, setnameok] = useState(true);
   const [mailok, setmailok] = useState(true);
   const [passok, setpassok] = useState(true);
@@ -31,6 +35,9 @@ function RightLogin({ state, setState, setVerify, ...props }) {
   const [errorMSG, seterrorMSG] = useState(false);
   const [message, setmessage] = useState("");
   const [signUpVerifyModal, setSignUpVerifyModal] = useState(false);
+
+  const dispatch = useDispatch()
+  const heroState = useSelector(state => state.HeroState)
 
   if (nameok === true && mailok === true && passok === true) {
     state.fregsisterok = true;
@@ -69,7 +76,7 @@ function RightLogin({ state, setState, setVerify, ...props }) {
       }
     } catch (err) {
       setLoading(false);
-      setVerify(err.response.data.email);
+      dispatch(setVerify(err.response.data.email));
       setmessage(err.response.data.message);
 
       seterrorMSG(true);
@@ -89,15 +96,18 @@ function RightLogin({ state, setState, setVerify, ...props }) {
             : "",
         password: state.fpass,
       });
-      setVerify(data);
+      dispatch(setVerify(data));
       setLoading(true);
-      data && setSignUpVerifyModal(true);
-
+      if(data){
+        // props.setpopUpClicked(false)
+        setSignUpVerifyModal(true)
+      }
       setmessage(`register sucessfully!\n${data.message}`);
       seterrorMSG(true);
       // notifySucess('register sucessfully!')
       if (data.details.length > 0) {
         setLoading(false);
+        props.setpopUpClicked(false)
       }
     } catch (err) {
       setLoading(false);
@@ -152,7 +162,11 @@ function RightLogin({ state, setState, setVerify, ...props }) {
       <div className="row col-12 p-0 m-auto">
         <div
           className="col-6 text-center"
-          onClick={() => setState({ ...state, selected: "left" })}
+          onClick={() =>{
+            // dispatch(setClicked("left"))
+            setState({ ...state, selected: "left" })
+           }}
+          // onClick={() => setState({ ...state, selected: "left" })}
           style={{
             backgroundColor: "#4F4F4F",
             borderRadius: "5px 5px 0px 0px",
@@ -174,7 +188,11 @@ function RightLogin({ state, setState, setVerify, ...props }) {
             marginTop: "-8px",
             cursor: "pointer",
           }}
-          onClick={() => setState({ ...state, selected: "right" })}
+          onClick={() =>{
+          //  dispatch(setClicked("right"))
+           setState({ ...state, selected: "right" })
+          }}
+          // onClick={() => setState({ ...state, selected: "right" })}
         >
           <h6 className="mt-2 text-light text-center">I'm an Interpreter</h6>
         </div>

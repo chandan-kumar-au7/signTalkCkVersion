@@ -45,3 +45,111 @@
 .reqiredIntrepreter {
   margin-left: 80px;
 }
+
+.CancelMeeting {
+  color: #ff6171;
+}
+.SendFinalPrice {
+  color: #7e21db;
+}
+
+.colorWhite {
+  color: white;
+}
+
+.floatleft {
+  display: flex;
+  justify-content: space-between;
+}
+
+.displayflex {
+  flex: 1;
+}
+
+.displayflex2 {
+  flex: 2;
+}
+
+.addMeetingLinkBtn {
+  background: #7e21db;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  margin: 20px 0px 90px 10px;
+}
+.addedMeeting {
+  color: #7e21db;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: none;
+  margin: 20px 0px 90px 10px;
+}
+
+.addmeetingspan {
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin-left: -20px;
+  background: #272727;
+}
+
+.NormalApplication {
+  width: 100%;
+  /* height: 300px; */
+  background: #272727;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.AcceptBtn {
+  background-color: #24e5af;
+  color: white;
+  border-radius: 20px;
+  padding: 6px 30px;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  margin-left: -30px;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.backblue {
+  background: #7e21db;
+  width: 25px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.colorwhites1 {
+  color: white;
+  font-size: 22px;
+}
+
+.cancelmeetingno {
+  width: 20px;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid #7e21db;
+  border-radius: 5px;
+  margin-left: 10px;
+  background: none;
+  color: white;
+}
+
+.cancelmeetingyes {
+  width: 20px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  margin-left: 30px;
+  border: 2px solid #7e21db;
+  background: #7e21db;
+  color: white;
+}
+
+/* .cancelmeetingpar {
+  justify-content: space-around;
+} */

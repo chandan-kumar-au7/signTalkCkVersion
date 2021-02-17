@@ -3,11 +3,24 @@ import OtpInput from "react-otp-input";
 import Axios from "axios";
 import { useState, useMemo } from "react";
 import Timer from "react-compound-timer";
+import { useSelector, useDispatch } from 'react-redux'
+import { setDashboard } from '../../../../redux/Actions/Interpreter/interpreterTempActions'
+import { setPhoneModal, setOrganisationModal } from '../../../../redux/Actions/ModalActions'
 
-function Step2({ state, setState, sendOtp }) {
+function Step2({ state, setState, sendOtp, isOnboard, closeModal }) {
   const [timer, setTimer] = useState(300);
   const [verifyClicked, setVerfiyClicked] = useState(false);
   const [resend, setResend] = useState(false);
+
+  const dispatch = useDispatch()
+  const {
+    phone,
+    formState,
+    otp,
+    matchedOtp,
+    disabled,
+    // timer
+  } = useSelector(state => state.interpreterTempState)
 
   useMemo(() => {
     if (timer !== 0 && timer > 0) {
@@ -18,26 +31,30 @@ function Step2({ state, setState, sendOtp }) {
   async function verifyPhone() {
     try {
       setVerfiyClicked(true);
-      setState({ ...state, loader: true });
+      dispatch(setDashboard({loader: true }));
       const { data } = await Axios({
         method: "post",
-        url: `https://whispering-lake-75400.herokuapp.com/Home/verify?mobile_no=${state.phone.slice(
-          2
-        )}&otp=${state.otp}`,
+        url: 
+        isOnboard 
+          ? `https://whispering-lake-75400.herokuapp.com/services/verify?mobile_no=${phone.slice(2)}&otp=${otp}`
+          : `https://whispering-lake-75400.herokuapp.com/Home/verify?mobile_no=${phone.slice(2)}&otp=${otp}`
+        ,
         headers: {
-          token: localStorage.getItem("token"),
+          token: 
+          isOnboard === true 
+          ? localStorage.getItem("userToken") 
+          : localStorage.getItem("token")
         },
       });
-      console.log("data from verify", data);
-      setState({
-        ...state,
-        matchedOtp: true,
-        loader: false,
-        verified: true,
-        formState: state.formState + 1,
-      });
+      dispatch(setDashboard({matchedOtp: true}))
+      dispatch(setDashboard({loader: false}))
+      dispatch(setDashboard({verified: true}))
+      dispatch(setDashboard({formState: formState + 1}))
+      dispatch(setOrganisationModal(true))
+      dispatch(setPhoneModal(false))
     } catch (err) {
-      setState({ ...state, matchedOtp: false, loader: false });
+      dispatch(setDashboard({matchedOtp: false}));
+      dispatch(setDashboard({loader: false }));
       console.log(err.message);
     }
   }
@@ -48,20 +65,22 @@ function Step2({ state, setState, sendOtp }) {
       <p className="smallFont">code has been sent successfully</p>
       <OtpInput
         isDisabled={timer !== 0 && timer > 0 ? false : true}
-        value={state.otp}
+        value={otp}
         onChange={(e) => {
           if (e.length === 6) {
-            setState({ ...state, disabled: false, otp: e });
+            dispatch(setDashboard({disabled: false}));
+            dispatch(setDashboard({otp: e }));
           } else {
-            setState({ ...state, otp: e, disabled: true });
+            dispatch(setDashboard({otp: e}));
+            dispatch(setDashboard({disabled: true }));
           }
         }}
         numInputs={6}
         separator={<span className="text-center p-2 ml-auto"></span>}
         inputStyle={{
           border:
-            state.matchedOtp !== "" &&
-            state.matchedOtp === false &&
+            matchedOtp !== "" &&
+            matchedOtp === false &&
             verifyClicked &&
             !resend
               ? "3px solid red"
@@ -80,7 +99,7 @@ function Step2({ state, setState, sendOtp }) {
         }}
       />
       {/* {
-        state.matchedOtp !== '' && state.matchedOtp == false  && verifyClicked &&(
+        matchedOtp !== '' && matchedOtp == false  && verifyClicked &&(
             <p style={{
               color : 'red',
               paddingTop : '15px'
@@ -103,14 +122,14 @@ function Step2({ state, setState, sendOtp }) {
         }
       </p>
       <button
-        disabled={state.disabled}
+        disabled={disabled}
         className={`btn btn-sm text-light ${
-          state.disabled === true ? "disabled" : null
+          disabled === true ? "disabled" : null
         }`}
         style={{ backgroundColor: "#54ACF0" }}
         onClick={() => {
           verifyPhone();
-          console.log(state.otp);
+          console.log(otp);
         }}
       >
         Verify

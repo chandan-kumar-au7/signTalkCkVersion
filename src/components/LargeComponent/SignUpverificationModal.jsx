@@ -5,25 +5,31 @@ import { Modal } from "react-responsive-modal";
 import Axios from "axios";
 import "./verifyModal.css";
 import Loader from "./dashboard/smallComponent/Spinner";
+import { notifySucess, notifyWarning } from "../AlertComponent/ToastifyAlert";
+import { useSelector, useDispatch } from 'react-redux'
+import { setmodalState } from "../../redux/Actions/HeroActions";
+import { setClientSignupModal, setPhoneModal, setEmailVerifyModal } from "../../redux/Actions/ModalActions";
 
-const SignUpverificationModal = ({
-  verify,
-  isInterpreter,
-  formData,
-  setFormData,
-  setPhoneModal,
-}) => {
+const SignUpverificationModal = ({ isInterpreter, formData, setFormData, ...props }) => {
   const [pass, setOtp] = useState({
     disabled: true,
-    otp: "",
-  });
-  const [loading, setLoading] = useState(false);
-  const [o, setO] = useState(false);
+    otp: ''
+  })
+
+  const dispatch = useDispatch()
+  // const heroState = useSelector(state => state.HeroState)
+  const { emailVerificationModal } = useSelector(state => state.ModalState)
+
+  const { verify } = useSelector(state => state.HeroState)
+  const[loading, setLoading] = useState(false);
+  const[o, setO] = useState(false);
   const [error, setError] = useState(false);
 
   useEffect(() => {
     if (verify != null) {
-      setO(true);
+      // setO(true);
+      dispatch(setEmailVerifyModal(true))
+      // dispatch(setmodalState(false))
     }
   }, [verify]);
   const handleResnendClick = async () => {
@@ -49,10 +55,17 @@ const SignUpverificationModal = ({
     }
   };
 
+  // // const verifiedToken = localStorage.getItem("verifiedToken")
+  // // if(props.isOnBoard && verifiedToken && verify ){
+  // //   dispatch(setmodalState(false));
+  // //   setPhoneModal(true)
+  // // }
+  // console.log(props.isOnBoard, verifiedToken, verify, setPhoneModal, props.phoneModal)
+
   const handleClick = async () => {
     try {
-      setLoading(true);
-      let data = await Axios({
+      setLoading(true)
+      let {data} = await Axios({
         method: "get",
         url: isInterpreter
           ? `https://whispering-lake-75400.herokuapp.com/Register/interpretor/verify?email=${verify}&vcode=${pass.otp}`
@@ -61,14 +74,17 @@ const SignUpverificationModal = ({
       if (data.error) {
         setError(true);
         setLoading(false);
-        setO(false);
+        // setO(false);
+        dispatch(setEmailVerifyModal(false))
       } else {
         // notifySucess('Email verified successfully ! Login to proceed !')
-        localStorage.setItem("token", data.token);
+        localStorage.setItem("userToken", data.token);
         setLoading(false);
-        setO(false);
-        setPhoneModal(true);
-        console.log(formData);
+        // setO(false);
+        dispatch(setClientSignupModal(false))
+        // dispatch(setmodalState(false))
+        dispatch(setPhoneModal(true))
+        console.log(formData)
       }
     } catch (err) {
       setError(true);
@@ -78,8 +94,10 @@ const SignUpverificationModal = ({
   };
   return (
     <Modal
-      open={o}
-      onClose={() => setO(false)}
+      open={emailVerificationModal}
+      onClose={() => dispatch(setEmailVerifyModal(false))}     
+      // open={o}
+      // onClose={() => setO(false)}
       classNames={{
         overlay: "customOverlay",
         modal: "customModal3",

@@ -33,6 +33,7 @@ import CompletedClient from "./dashboradClient/Completed/Completed";
 import MessagesClient from "./dashboradClient/MessagesClient/Messages";
 import NotificationClient from "./dashboradClient/NotificationClient/Notification";
 import ProfileClient from "./dashboradClient/ProfileClient/Profile";
+import OnBoard from './components/Client/OnBoard'
 
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
@@ -92,12 +93,20 @@ const App = (props) => {
           }`}
         >
           {props.location.pathname === "/interpretly" ||
+            props.location.pathname === "/client/onboard" ||
           (props.location.pathname === "/interpretly" &&
             Token === null) ? null : ctoken !== null ? (
             <AsidebarClient />
           ) : (
             <Navbar />
           )}
+          {/* {props.location.pathname === "/client/onboard" ||
+          (props.location.pathname === "/interpretly" && Token === null) 
+          && ctoken !== null ? (
+            <AsidebarClient />
+          ) : (
+            <Navbar />
+          )} */}
 
           <ToastifyAlert style={{ zIndex: "1" }} />
           <Switch>
@@ -107,6 +116,7 @@ const App = (props) => {
               component={Home}
               layout={LayoutDefault}
             />
+            <Route exact path="/client/onboard" component={OnBoard} />
             <Route exact path="/interpretly/dashboard" component={Dashboard} />
             <Route exact path="/interpretly/profile" component={Profile} />
             <Route exact path="/interpretly/request" component={JobRequests} />

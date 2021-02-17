@@ -2,28 +2,41 @@ import React from "react";
 import "./MeetingCard.css";
 
 import infoIcon from "../../assets/images/Icon feather-info.svg";
-function MeetingCards(props) {
+function MeetingCards({
+  date,
+  time,
+  type,
+  title,
+  duration,
+  amount,
+  totalapplicants,
+  setclickevent,
+}) {
   return (
-    <div className="mt-3 ml-4 MeetingCard ">
+    <div
+      className="mt-3 ml-4 MeetingCard "
+      onClick={() => {
+        setclickevent(true);
+      }}
+    >
       <div className="cofMeetingcard">
         <div className="McardFirstChild1">
           <div>
             <div>
               <span className="textcolorpurple">
-                {props.title}- {props.type}
+                {title}- {type}
               </span>{" "}
               <span className="textcolorWhite">
-                &#8226; {props.date} &#8226; {props.time}
+                &#8226; {date} &#8226; {time}
               </span>
             </div>
 
             <div>
-              Duration :{" "}
-              <span className="textcolorpurple"> {props.duration} </span>
+              Duration : <span className="textcolorpurple"> {duration} </span>
             </div>
 
             <div className="amountSection">
-              Amount : &#8377;{props.amount}{" "}
+              Amount : &#8377;{amount}{" "}
               <img
                 className="infoicon"
                 width={20}
@@ -31,7 +44,7 @@ function MeetingCards(props) {
                 alt="infoIcon"
               />
               <span className="reqiredIntrepreter">
-                No. of intrepreter required : {props.totalapplicants}
+                No. of intrepreter required : {totalapplicants}
               </span>
             </div>
           </div>
@@ -39,7 +52,7 @@ function MeetingCards(props) {
         <div className="McardFirstChild2">
           <div className="totalapplicants">
             No. of Applicants :{" "}
-            <span className="textcolorpurple">{props.totalapplicants} </span>
+            <span className="textcolorpurple">{totalapplicants} </span>
           </div>
           <div>
             <button className="Meetingchild1 viewapplicantsbtn">

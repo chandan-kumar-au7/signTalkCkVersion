@@ -5,10 +5,14 @@ import SignUpLogin from "../../../LargeComponent/SignUpLogin";
 import ReactModal from 'react-responsive-modal'
 import classNames from "classnames";
 import VerifyForm from '../../../LargeComponent/dashboard/VerifyForm'
+import Org from '../org/Org'
+import { useSelector, useDispatch } from 'react-redux'
+import { setClicked } from '../../../../redux/Actions/HeroActions'
+import { setPhoneModal, setClientSignupModal, setOrganisationModal } from '../../../../redux/Actions/ModalActions'
 
 const ShortConfirmation = ({
-    phoneModal,
-    setPhoneModal,
+    // phoneModal,
+    // setPhoneModal,
     formData, 
     setFormData, 
     closeModal,
@@ -16,9 +20,15 @@ const ShortConfirmation = ({
     setSteps,
     props
 }) => {
+    // const[phoneModal, setPhoneModal] = useState(false)
+    // const[logModal, setLogModal] = useState(false)
 
-    const[logModal, setLogModal] = useState(false)
+    // const closePhoneModal = (data) => setPhoneModal(data)
 
+    const dispatch = useDispatch()
+    // const { modalState } = useSelector(state => state.HeroState)
+    const { verified } = useSelector(state => state.interpreterTempState)
+    const { phoneModal, clientSignUpModal, organisationModal } = useSelector(state => state.ModalState)
     return (
         <>
         <div className='short-confirmtion-container'>
@@ -122,8 +132,21 @@ const ShortConfirmation = ({
                         const clientToken = localStorage.getItem('userToken')
                         return (
                             clientToken 
-                            ? setSteps(4)
-                            : setLogModal(true)
+                            ? ( verified 
+                                ?
+                                    ( 
+                                        formData.organisationName === '' && formData.organisationType === '' 
+                                        ? dispatch(setOrganisationModal(true))
+                                        : setSteps(4)
+                                    )
+                                :
+                                    dispatch(setPhoneModal(true))
+                            )
+                            // : dispatch(setmodalState(true))
+                            : (
+                                dispatch(setClicked('left')),
+                                dispatch(setClientSignupModal(true))
+                            )
                         )
                     }
                     }
@@ -131,12 +154,15 @@ const ShortConfirmation = ({
             </div>
         </div>
         {
-            logModal &&
+            clientSignUpModal &&
             <ReactModal
-                open={logModal}
+                // open={heroState.modalState===true}
+                open={clientSignUpModal}
                 onClose={()=> {
-                    setLogModal(false)
+                    // dispatch(setmodalState(false))
+                    dispatch(setClientSignupModal(false))
                 }}
+                showCloseIcon={false}
                 classNames={{
                     modal : 'client-job-modal2'
                 }}
@@ -144,22 +170,43 @@ const ShortConfirmation = ({
             >
                 <p style={{ textAlign : 'center'}}>You need to log yourself in first</p>
                 <SignUpLogin
-                    phoneModal={phoneModal}
-                    setPhoneModal={setPhoneModal}
+                    isOnBoard={props.onBoard}
+                    // phoneModal={phoneModal}
+                    // setPhoneModal={closePhoneModal}
                     isInterpreter={false}
                     // setVerify={props.setVerify}
                     clicked={'left'}
-                    modalState={logModal}
-                    setmodalState={setLogModal}
+                    // modalState={logModal}
                 />
             </ReactModal>
         }
         {
             phoneModal &&
                 <VerifyForm
-                    phoneModal
-                    setPhoneModal
+                    isOnboard={true}
+                    // phoneModal
+                    // setPhoneModal={closePhoneModal}
                 />
+        }
+        
+        {
+            organisationModal &&
+            <ReactModal
+                open={organisationModal}
+                onClose={()=> {
+                    dispatch(setOrganisationModal(false))
+                }}
+                classNames={{
+                    modal : 'client-job-modal3'
+                }}
+                center
+            >
+                <Org
+                    formData={formData}
+                    setFormData={setFormData}
+                />
+            </ReactModal>
+                
         }
         </>
     )

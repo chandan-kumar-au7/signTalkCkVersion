@@ -4,6 +4,7 @@
   padding: 20px;
   margin-right: 2vw;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .cofMeetingcard {
@@ -45,6 +46,11 @@
 
 .infoicon {
   margin-left: 20px;
+}
+
+.leftarrow {
+  width: 10px;
+  height: 30px;
 }
 
 @media only screen and (max-width: 992px) {
